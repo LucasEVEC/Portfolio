@@ -13,32 +13,19 @@ const Photo = () => {
             transition: { delay: 2, duration: 0.4, ease: "easeIn"},
             }}
       >
-        {/* Image with gradient mask */}
+        {/* Simplified Image without gradient mask */}
         <div className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] rounded-full absolute overflow-hidden">
-          <svg className="absolute inset-0 w-full h-full">
-            <defs>
-              <radialGradient id="grad">
-                <stop offset="50%" stopColor="white" stopOpacity="1" />
-                <stop offset="100%" stopColor="white" stopOpacity="0" />
-              </radialGradient>
-              <mask id="mask" maskUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%">
-                <rect x="0" y="0" width="100%" height="100%" fill="url(#grad)" />
-              </mask>
-            </defs>
-            <rect x="0" y="0" width="100%" height="100%" fill="black" mask="url(#mask)" />
-          </svg>
           <Image 
-            src="/assets/profile-picture.jpg"
+            src="/assets/unnamed.jpg"
             priority
             quality={100}
             layout="fill"
-            alt=""
+            alt="Photo de profil"
             className="object-cover"
-            style={{ mask: 'url(#mask)', WebkitMask: 'url(#mask)' }}
           />
         </div>
 
-        {/* circle */}
+        {/* Circle Animation */}
         <motion.svg 
             className="w-[300px] xl:w-[506px] h-[300px] xl:h-[506px]" fill="transparent"
             viewBox="0 0 506 506"
@@ -64,10 +51,9 @@ const Photo = () => {
                 }}
             />
         </motion.svg>
-
       </motion.div>
     </div>
-  )
-}
+  );
+};
 
 export default Photo;
