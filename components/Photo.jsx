@@ -28,7 +28,7 @@ const Photo = () => {
             <rect x="0" y="0" width="100%" height="100%" fill="black" mask="url(#mask)" />
           </svg>
           <Image 
-            src="/assets/unnamed.jpg"
+            src="/assets/profile-picture.jpg"
             priority
             quality={100}
             layout="fill"
