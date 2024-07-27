@@ -14,7 +14,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata = {
   title: 'Lucas EVEC',
-  description: 'Your Description',
+  description: 'Decouvrez mon Portfolio.',
 };
 
 export default function RootLayout({ children }) {

@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";  // Assurez-vous que vous avez un composant Input dans votre bibliothèque UI
+import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 import { 
@@ -19,7 +19,7 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";  // Ajo
 const info = [
     {
         icon: <FaPhoneAlt />,
-        title: "Phone",
+        title: "Téléphone",
         description: "(+33) 6 02 31 66 20"
     },
     {
@@ -29,8 +29,8 @@ const info = [
     },
     {
         icon: <FaMapMarkerAlt />,
-        title: "Adress",
-        description: "blablablabla"
+        title: "Adresse",
+        description: "Poitiers, Fr"
     }
 ]
 
@@ -51,21 +51,21 @@ const Contact = () => {
                     <div className="xl:h-[54%] order-2 xl:order-none">
                         <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
                             <h3 className="text-4xl text-accent">Let&apos;s Work together!</h3>
-                            <p className="text-white/60">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus excepturi qui earum!</p>
+                            <p className="text-white/60">Contactez-moi ici pour convenir des ambitions de votre projet!</p>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <Input type="text" placeholder="Firstname" />
-                                <Input type="text" placeholder="Lastname" />
-                                <Input type="email" placeholder="Email address" />
-                                <Input type="tel" placeholder="Phone number" />
+                                <Input type="text" placeholder="Prénom" />
+                                <Input type="text" placeholder="Nom" />
+                                <Input type="email" placeholder="Adresse e-mail" />
+                                <Input type="tel" placeholder="Numéro de téléphone" />
                             </div>
                             <Select>
                                 <SelectTrigger className="w-full">
-                                    <SelectValue placeholder="Select a service"/>
+                                    <SelectValue placeholder="Choisir"/>
                                 </SelectTrigger>
                                 <SelectContent>
                                     <SelectGroup>
-                                        <SelectLabel>Select a service</SelectLabel>
-                                        <SelectItem value="est">Web Development</SelectItem>
+                                        <SelectLabel>Sélectionnez un service</SelectLabel>
+                                        <SelectItem value="est">Développement Web</SelectItem>
                                         <SelectItem value="cst">UI/UX Design</SelectItem>
                                         <SelectItem value="mst">Logo Design</SelectItem>
                                     </SelectGroup>
@@ -73,9 +73,9 @@ const Contact = () => {
                             </Select>
                             <Textarea
                                 className="h-[200px]" 
-                                placeholder="Type your message here."
+                                placeholder="Entrez votre message."
                             />
-                            <Button size="md" className="max-w-40">Send message</Button>
+                            <Button size="mg" className="max-w-56">Envoyez votre message</Button>
                         </form>
                     </div>
                     <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">

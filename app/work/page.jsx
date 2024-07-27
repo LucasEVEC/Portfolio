@@ -24,7 +24,7 @@ const projects = [
         num: "01",
         category: "Front-end",
         title: "Drive Avenue",
-        description: "Site vitrine d'un site de straming. Pomme Sans Nuages.",
+        description: "Site vitrine d'un site de straming.",
         stack: [{ name: "html 5" }, { name: "css 3" }, { name: "Javascript" }],
         image: "/assets/Projet01.png",
         live: "",
@@ -34,7 +34,7 @@ const projects = [
         num: "02",
         category: "Front-end",
         title: "Eylifiqu Gym",
-        description: "Projet d'un reseaux social fictif dans le theme d'une serie Americaine.",
+        description: "Projet d'un réseau social fictif dans le thème d'une série Américaine.",
         stack: [{ name: "html 5" }, { name: "css 3" }, { name: "Javascript" }],
         image: "/assets/Project02.png",
         live: "",
@@ -44,7 +44,7 @@ const projects = [
         num: "03",
         category: "UI/UX Design",
         title: "Les Enfants sont Rois",
-        description: "Site profesionnel d'une E-Boutique scpecialise dans les vetement bio et ecologique pour bebe .",
+        description: "Site professionnel d'une E-Boutique spécialisée dans les vêtements bio et écologiques pour bébé.",
         stack: [{ name: "html 5" }, { name: "css 3" }, { name: "Javascript" }],
         image: "/assets/Projet03.png",
         live: "",
@@ -99,7 +99,7 @@ const Work = () => {
                             </ul>
                             <div className="border border-white/20"></div>
                             <div className="flex items-center gap-4">
-                                <Link href={selectedProject.live}>
+                                <Link href={selectedProject.live} target="_blank">
                                     <TooltipProvider delayDuration={100}>
                                         <Tooltip>
                                             <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -112,7 +112,7 @@ const Work = () => {
                                     </TooltipProvider>
                                 </Link>
 
-                                <Link href={selectedProject.github}>
+                                <Link href={selectedProject.github} target="_blank">
                                     <TooltipProvider delayDuration={100}>
                                         <Tooltip>
                                             <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -139,7 +139,7 @@ const Work = () => {
                                           src={project.image}
                                           layout="fill"
                                           className="object-cover"
-                                          alt={project.name} // Ajouter un alt pertinent
+                                          alt={project.name}
                                         />
                                       </div>
                                     </div>

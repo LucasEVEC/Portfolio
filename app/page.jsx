@@ -15,7 +15,7 @@ const Home = () => {
           <div className="text-center xl-text-left order-2 xl:order-none">
             <span className="text-xl">Développeur front-end</span>
             <h1 className="h1">
-              Bonjour, je suis <br /> <span className="text-accent">Lucas EVEC</span>
+              Bonjour,<br />je suis<br /><span className="text-accent">Lucas EVEC</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
               Je conçois des expériences numériques élégantes et intuitives, alliant créativité et fonctionnalité.
