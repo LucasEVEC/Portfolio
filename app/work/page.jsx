@@ -26,7 +26,7 @@ const projects = [
         title: "Drive Avenue",
         description: "Site vitrine d'un site de straming.",
         stack: [{ name: "html 5" }, { name: "css 3" }, { name: "Javascript" }],
-        image: "/assets/Projet01.png",
+        image: "/assets/Project01.png",
         live: "",
         github: ""
     },
@@ -34,11 +34,11 @@ const projects = [
         num: "02",
         category: "Front-end",
         title: "Eylifiqu Gym",
-        description: "Projet d'un réseau social fictif dans le thème d'une série Américaine.",
+        description: "Projet d'un réseau social fictif.",
         stack: [{ name: "html 5" }, { name: "css 3" }, { name: "Javascript" }],
         image: "/assets/Project02.png",
-        live: "",
-        github: "https://github.com/LucasEVEC/ModernFamilly"
+        live: "https://sobted.vercel.app/",
+        github: ""
     },
     {
         num: "03",
@@ -99,7 +99,7 @@ const Work = () => {
                             </ul>
                             <div className="border border-white/20"></div>
                             <div className="flex items-center gap-4">
-                                <Link href={selectedProject.live} target="_blank">
+                               {/*<Link href={selectedProject.live} target="_blank">
                                     <TooltipProvider delayDuration={100}>
                                         <Tooltip>
                                             <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -123,7 +123,7 @@ const Work = () => {
                                             </TooltipContent>
                                         </Tooltip>
                                     </TooltipProvider>
-                                </Link>
+                                </Link> */}
                             </div>
                         </div>
                     </div>
