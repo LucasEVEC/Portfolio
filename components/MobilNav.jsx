@@ -51,13 +51,13 @@ const MobilNav = () => {
         {/* Logo */}
         <div className="mt-16 mb-16 text-center text-2xl">
           <Link href="/">
-            <h1 className="text-3xl font-semibold">
+            <h1 className="text-black text-3xl font-semibold">
               Lucas<span className="text-accent">.</span>
             </h1>
           </Link>
         </div>
         {/* Nav */}
-        <nav className="flex flex-col justify-center items-center gap-8 mb-64">
+        <nav className="text-black flex flex-col justify-center items-center gap-8 mb-64">
           {links.map((link, index) => (
             <Link
               href={link.path}

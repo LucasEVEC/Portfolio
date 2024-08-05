@@ -1,21 +1,20 @@
 "use client";
 
 import { useSwiper } from "swiper/react";
+import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi";
 
-import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi"
-
-const WorkSliderBtns = ({containerStyles, btnStyles, iconsStyles}) => {
+const WorkSliderBtns = ({ containerStyles, btnStyles, iconsStyles }) => {
     const swiper = useSwiper();
     return (
         <div className={containerStyles}>
-            <button className={btnStyles} onClick={() => swiper.slidePrev()}>
-                <PiCaretLeftBold className={iconsStyles}/>
+            <button className={`${btnStyles} left-4`} onClick={() => swiper.slidePrev()}>
+                <PiCaretLeftBold className={iconsStyles} />
             </button>
-            <button className={btnStyles} onClick={() => swiper.slideNext()}>
+            <button className={`${btnStyles} right-4`} onClick={() => swiper.slideNext()}>
                 <PiCaretRightBold className={iconsStyles} />
             </button>
         </div>
-    )
-}
+    );
+};
 
-export default WorkSliderBtns
+export default WorkSliderBtns;

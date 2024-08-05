@@ -46,7 +46,7 @@ const projects = [
         title: "Les Enfants sont Rois",
         description: "Site professionnel d'une E-Boutique spécialisée dans les vêtements bio et écologiques pour bébé.",
         stack: [{ name: "html 5" }, { name: "css 3" }, { name: "Javascript" }],
-        image: "/assets/Projet03.png",
+        image: "/assets/Project03.png",
         live: "",
         github: ""
     },
@@ -66,16 +66,14 @@ const Work = () => {
     const [selectedProject, setSelectedProject] = useState(projects[0]);
 
     const handleSlideChange = (swiper) => {
-        const currentIndex = swiper.activeIndex
-
-        setSelectedProject(projects[currentIndex])
-    }
-
+        const currentIndex = swiper.activeIndex;
+        setSelectedProject(projects[currentIndex]);
+    };
 
     return (
         <motion.section
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: {delay: 2.4}, duration: 0.4, ease:"easeIn" }}
+            animate={{ opacity: 1, transition: { delay: 2.4 }, duration: 0.4, ease: "easeIn" }}
             className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
         >
             <div className="container mx-auto">
@@ -85,10 +83,10 @@ const Work = () => {
                             <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
                                 {selectedProject.num}
                             </div>
-                            <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                               Projet {selectedProject.category} 
+                            <h2 className="text-[42px] font-bold leading-none text-black group-hover:text-accent transition-all duration-500 capitalize">
+                                Projet {selectedProject.category}
                             </h2>
-                            <p className="text-white/60">{selectedProject.description}</p>
+                            <p className="text-black/60">{selectedProject.description}</p>
                             <ul className="flex gap-4">
                                 {selectedProject.stack.map((item, index) => (
                                     <li key={index} className="text-xl text-accent">
@@ -99,7 +97,8 @@ const Work = () => {
                             </ul>
                             <div className="border border-white/20"></div>
                             <div className="flex items-center gap-4">
-                               {/*<Link href={selectedProject.live} target="_blank">
+                                {/* Uncomment if needed */}
+                                {/* <Link href={selectedProject.live} target="_blank">
                                     <TooltipProvider delayDuration={100}>
                                         <Tooltip>
                                             <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -127,32 +126,41 @@ const Work = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full xl:w-[50%]">
-                        <Swiper spaceBetween={30} slidesPerView={1} className="xl:h-[520px] mb-12" onSlideChange={handleSlideChange}>
-                            {projects.map((project, index)=> {
+                    <div className="w-full xl:w-[50%] relative">
+                        <Swiper
+                            spaceBetween={30}
+                            slidesPerView={1}
+                            className="xl:h-[520px] mb-12"
+                            onSlideChange={handleSlideChange}
+                        >
+                            {projects.map((project, index) => {
                                 return (
                                     <SwiperSlide key={index} className="w-full">
-                                    <div className="h-[460px] relative group flex justify-center bg-pink-50/20">
-                                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
-                                      <div className="relative w-full h-full">
-                                        <Image
-                                          src={project.image}
-                                          layout="fill"
-                                          className="object-cover"
-                                          alt={project.name}
-                                        />
-                                      </div>
-                                    </div>
-                                  </SwiperSlide>
-                                )
+                                        <div className="h-[300px] md:h-[460px] relative group flex justify-center bg-pink-50/20">
+                                            <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
+                                            <div className="relative w-full h-full">
+                                                <Image
+                                                    src={project.image}
+                                                    layout="fill"
+                                                    objectFit="cover" // Ajout de cette ligne pour que l'image couvre correctement son conteneur
+                                                    className="object-cover"
+                                                    alt={project.name}
+                                                />
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>
+                                );
                             })}
-                            {/* Button */}
-                            <WorkSliderBtns containerStyles="flex gap-2 absolute right-0
-                            bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none" btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"/>
+                            <WorkSliderBtns
+                                containerStyles="absolute inset-y-0 flex items-center justify-between w-full z-20 pointer-events-none"
+                                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all pointer-events-auto"
+                                iconsStyles="text-2xl"
+                            />
                         </Swiper>
                     </div>
                 </div>
             </div>
+
         </motion.section>
     );
 };

@@ -3,7 +3,7 @@
 const Photo = () => {
   return (
     <div className="flex justify-center items-center w-full h-full relative">
-      <div className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] rounded-full overflow-hidden flex justify-center items-center relative">
+      <div className="w-[198px] h-[198px] xl:w-[358px] xl:h-[358px] rounded-full overflow-hidden flex justify-center items-center relative">
         <img 
           src="/assets/profile-picture.jpg"
           alt="Photo de profil"

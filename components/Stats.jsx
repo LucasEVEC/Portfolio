@@ -19,7 +19,7 @@ const stats = [
 
 const Stats = () => {
   return (
-    <section className="pt-4 pb-12 xl:pt-0 xl:pb-0">
+    <section className="text-black pt-4 pb-12 xl:pt-0 xl:pb-0">
         <div className="container mx-auto">
             <div className="flex flex-wrap gap-6 max-w-[80vw] mx-auto xl:max-w-none">
                 {stats.map((item, index)=> {
@@ -36,7 +36,7 @@ const Stats = () => {
                             />
                             <p
                                 className={`${item.text.length < 15 ? "max-w-[100px]" : "max-w-[510px]"
-                                } leading-snug text-white/80`}
+                                } leading-snug text-black/60`}
                             >
                                 {item.text}
                             </p>

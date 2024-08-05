@@ -7,7 +7,7 @@
     @apply font-primary bg-primary text-white leading-loose;
   }
   .h1 {
-    @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
+    @apply text-[48px] xl:text-[74px] leading-[1.1] font-semibold;
   }
   .h2 {
     @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
@@ -16,10 +16,34 @@
     @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
   }
   .text-outline {
-    -webkit-text-stroke: 1px #ffffff;
+    -webkit-text-stroke: 1px black;
   }
 
   .text-outline-hover {
-    -webkit-text-stroke: 1px #00ff99;
+    -webkit-text-stroke: 1px #947968;
+  }
+
+  /* styles/global.css */
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #faeee0;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #947968;
+    border-radius: 6px;
+    transition: all .5s ease-in-out;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #86756a;
+    transition: all .5s ease-in-out;
   }
 }
