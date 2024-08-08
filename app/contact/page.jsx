@@ -1,9 +1,9 @@
 "use client";
 
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-
 import { 
     Select,
     SelectContent,
@@ -13,8 +13,8 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select";
-
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const info = [
     {
@@ -32,11 +32,54 @@ const info = [
         title: "Adresse",
         description: "Poitiers, Fr"
     }
-]
+];
 
-import { motion } from "framer-motion";
+const headerVariants = {
+  hidden: {
+    padding: "84px 0 84px 0",
+    background: "none"
+  },
+  show: {
+    padding: "14px 0 14px 0",
+    background: "rgba(0,0,0,0.92)",
+    transition: {
+      type: "spring",
+    }
+  }
+};
+
+export const navVariants = {
+  hidden: {
+    clipPath: `circle(5.8% at 50% 0)`,
+    opacity: 0,
+    transition: {
+      type: `spring`,
+      delay: 0.2,
+      stiffness: 300,
+      damping: 140,
+    },
+  },
+  show: {
+    opacity: 1,
+    clipPath: `circle(130% at 50% 0)`,
+    transition: {
+      type: `spring`,
+      stiffness: 80,
+    },
+  },
+};
 
 const Contact = () => {
+    const [isActive, setIsActive] = useState(false);
+    const [nav, setNav] = useState(false);
+    const [showCGV, setShowCGV] = useState(false);
+
+    useEffect(() => {
+        window.addEventListener(`scroll`, () => {
+            window.scrollY > 50 ? setIsActive(true) : setIsActive(false);
+        });
+    }, []);
+
     return (
         <motion.section
             initial={{ opacity: 0 }}
@@ -65,9 +108,9 @@ const Contact = () => {
                                 <SelectContent>
                                     <SelectGroup>
                                         <SelectLabel className="text-black">Sélectionnez un service</SelectLabel>
-                                        <SelectItem className="text-black" value="est">Développement Web</SelectItem>
-                                        <SelectItem className="text-black" value="cst">UI/UX Design</SelectItem>
-                                        <SelectItem className="text-black" value="mst">Logo Design</SelectItem>
+                                        <SelectItem className="text-black" value="web">Développement Web</SelectItem>
+                                        <SelectItem className="text-black" value="uiux">UI/UX Design</SelectItem>
+                                        <SelectItem className="text-black" value="logo">Logo Design</SelectItem>
                                     </SelectGroup>
                                 </SelectContent>
                             </Select>
@@ -80,19 +123,17 @@ const Contact = () => {
                     </div>
                     <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
                         <ul className="flex flex-col gap-10">
-                            {info.map((item, index)=> {
-                                return (
-                                    <li key={index} className="flex items-center gap-6">
-                                        <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#f1d2ae] text-accent rounded-md flex items-center justify-center">
-                                            <div className="text-[28px]">{item.icon}</div>
-                                        </div>
-                                        <div className="flex-1">
-                                            <p className="text-black/60 ">{item.title}</p>
-                                            <h3 className="text-black text-xl">{item.description}</h3>
-                                        </div>
-                                    </li>
-                                )
-                            })}
+                            {info.map((item, index) => (
+                                <li key={index} className="flex items-center gap-6">
+                                    <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#f1d2ae] text-accent rounded-md flex items-center justify-center">
+                                        <div className="text-[28px]">{item.icon}</div>
+                                    </div>
+                                    <div className="flex-1">
+                                        <p className="text-black/60 ">{item.title}</p>
+                                        <h3 className="text-black text-xl">{item.description}</h3>
+                                    </div>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>
@@ -102,9 +143,27 @@ const Contact = () => {
                         <img draggable="false" src="/assets/Evec_Development.png" alt="Evec Development" className="max-w-full h-auto md:max-w-md lg:max-w-lg xl:max-w-xl" />
                     </div>
                 </div>
+                <div className="mt-12">
+                    <button 
+                        onClick={() => setShowCGV(!showCGV)} 
+                        className="bg-orange-500 text-white px-4 py-2 rounded"
+                    >
+                        {showCGV ? "Masquer les CGV" : "Afficher les CGV"}
+                    </button>
+                    {showCGV && (
+                        <div className="">
+                            <img draggable="false" src="/assets/cgdvp1.png" alt="Evec Development" className="max-w-full h-auto md:max-w-md lg:max-w-lg xl:max-w-xl" />
+                            <img draggable="false" src="/assets/cgdvp2.png" alt="Evec Development" className="max-w-full h-auto md:max-w-md lg:max-w-lg xl:max-w-xl" />
+                            <img draggable="false" src="/assets/cgdvp3.png" alt="Evec Development" className="max-w-full h-auto md:max-w-md lg:max-w-lg xl:max-w-xl" />
+                            <img draggable="false" src="/assets/cgdvp4.png" alt="Evec Development" className="max-w-full h-auto md:max-w-md lg:max-w-lg xl:max-w-xl" />
+                            <img draggable="false" src="/assets/cgdvp5.png" alt="Evec Development" className="max-w-full h-auto md:max-w-md lg:max-w-lg xl:max-w-xl" />
+                            <img draggable="false" src="/assets/cgdvp6.png" alt="Evec Development" className="max-w-full h-auto md:max-w-md lg:max-w-lg xl:max-w-xl" />
+                        </div>                        
+                    )}
+                </div>
             </div>
         </motion.section>
-    )
+    );
 };
 
 export default Contact;
