@@ -66,7 +66,7 @@ const projects = [
         title: "Modern Familly",
         description: "Conception d'un Site Internet pour Pizzeria.",
         stack: [{ name: "html 5" }, { name: "css 3" }, { name: "Javascript" }, { name: "React" }],
-        image: "/assets/Project04.png",
+        image: "/assets/Project05.png",
         live: "https://drive-avenue--self.vercel.app/",
         github: ""
     },
