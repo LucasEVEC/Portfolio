@@ -47,7 +47,7 @@ const projects = [
         description: "Site professionnel d'une E-Boutique spécialisée dans les vêtements bio et écologiques pour bébé.",
         stack: [{ name: "html 5" }, { name: "css 3" }, { name: "Javascript" }],
         image: "/assets/Project03.png",
-        live: "",
+        live: "https://car-ils-sont-nos-rois.vercel.app/",
         github: ""
     },
     {
@@ -57,7 +57,17 @@ const projects = [
         description: "Céation d'une maquette de la landing page d'un site de location automobile.",
         stack: [{ name: "html 5" }, { name: "css 3" }, { name: "Javascript" }],
         image: "/assets/Project04.png",
-        live: "",
+        live: "https://drive-avenue--self.vercel.app/",
+        github: ""
+    },
+    {
+        num: "05",
+        category: "Front-end",
+        title: "Modern Familly",
+        description: "Conception d'un Site Internet pour Pizzeria.",
+        stack: [{ name: "html 5" }, { name: "css 3" }, { name: "Javascript" }, { name: "React" }],
+        image: "/assets/Project04.png",
+        live: "https://drive-avenue--self.vercel.app/",
         github: ""
     },
 ];
@@ -97,12 +107,11 @@ const Work = () => {
                             </ul>
                             <div className="border border-white/20"></div>
                             <div className="flex items-center gap-4">
-                                {/* Uncomment if needed */}
-                                {/* <Link href={selectedProject.live} target="_blank">
+                                <Link href={selectedProject.live} target="_blank">
                                     <TooltipProvider delayDuration={100}>
                                         <Tooltip>
                                             <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                                                <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
+                                                <BsArrowUpRight className="text-black text-3xl group-hover:text-accent" />
                                             </TooltipTrigger>
                                             <TooltipContent>
                                                 <p>Live Project</p>
@@ -115,14 +124,14 @@ const Work = () => {
                                     <TooltipProvider delayDuration={100}>
                                         <Tooltip>
                                             <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                                                <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                                                <BsGithub className="text-black text-3xl group-hover:text-accent" />
                                             </TooltipTrigger>
                                             <TooltipContent>
                                                 <p>Github repository</p>
                                             </TooltipContent>
                                         </Tooltip>
                                     </TooltipProvider>
-                                </Link> */}
+                                </Link>
                             </div>
                         </div>
                     </div>
