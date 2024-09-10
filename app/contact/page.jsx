@@ -137,30 +137,6 @@ const Contact = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="mt-24">
-                    <h2 className="text-[42px] font-bold leading-none text-black group-hover:text-accent transition-all duration-500 capitalize">Mes tarifs</h2>
-                    <div className="flex justify-center mt-8">
-                        <img draggable="false" src="/assets/Evec_Development.png" alt="Evec Development" className="max-w-full h-auto md:max-w-md lg:max-w-lg xl:max-w-xl" />
-                    </div>
-                </div>
-                <div className="mt-12">
-                    <button 
-                        onClick={() => setShowCGV(!showCGV)} 
-                        className="bg-orange-500 text-white px-4 py-2 rounded"
-                    >
-                        {showCGV ? "Masquer les CGV" : "Afficher les CGV"}
-                    </button>
-                    {showCGV && (
-                        <div className="">
-                            <img draggable="false" src="/assets/cgdvp1.png" alt="Evec Development" className="max-w-full h-auto md:max-w-md lg:max-w-lg xl:max-w-xl" />
-                            <img draggable="false" src="/assets/cgdvp2.png" alt="Evec Development" className="max-w-full h-auto md:max-w-md lg:max-w-lg xl:max-w-xl" />
-                            <img draggable="false" src="/assets/cgdvp3.png" alt="Evec Development" className="max-w-full h-auto md:max-w-md lg:max-w-lg xl:max-w-xl" />
-                            <img draggable="false" src="/assets/cgdvp4.png" alt="Evec Development" className="max-w-full h-auto md:max-w-md lg:max-w-lg xl:max-w-xl" />
-                            <img draggable="false" src="/assets/cgdvp5.png" alt="Evec Development" className="max-w-full h-auto md:max-w-md lg:max-w-lg xl:max-w-xl" />
-                            <img draggable="false" src="/assets/cgdvp6.png" alt="Evec Development" className="max-w-full h-auto md:max-w-md lg:max-w-lg xl:max-w-xl" />
-                        </div>                        
-                    )}
-                </div>
             </div>
         </motion.section>
     );
